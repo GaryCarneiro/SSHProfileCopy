@@ -1,0 +1,28 @@
+set hlsearch
+
+colorscheme desert
+syntax enable
+
+filetype indent on
+
+set et
+set sw=4
+set smarttab
+set ruler
+set ignorecase
+
+if v:version >= 703
+        set cursorline
+endif
+
+if has("autocmd")
+  " Enable filetype detection
+  filetype plugin indent on
+
+  " Restore cursor position
+  autocmd BufReadPost *
+    \ if line("'\"") > 1 && line("'\"") <= line("$") |
+    \   exe "normal! g`\"" |
+    \ endif
+endif
+
