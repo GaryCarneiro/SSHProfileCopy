@@ -1,0 +1,26 @@
+#!/bin/bash
+
+alias rm='rm -i'                                                                                                                                                                                                                     
+alias mv='mv -i' 
+alias cp='cp -i' 
+alias ..='cd ..' 
+alias l='ls -F' 
+alias ll='ls -alFrt' 
+alias grep='fgrep -i --color' 
+alias top='top -c'
+
+
+ 
+case "$TERM" in 
+screen) 
+        export PROMPT_COMMAND='echo -ne "\033k$HOSTNAME\033\\"' 
+ ;; 
+esac 
+
+export PATH=$PATH:/home/y/bin:/home/y/sbin 
+export HISTSIZE=2000 
+export HISTIGNORE="&:ls:[bf]g:exit" 
+export HISTTIMEFORMAT="%d/%m/%y %T " 
+export PS1='\[\033[0;31m\][\@]\[\033[0;m\][\[\033[0;36m\]\u@\[\033[0;33m\]\H\[\033[0;m\] \W]\[\033[0;32m\]\$ '
+
+cat ~/.version 
