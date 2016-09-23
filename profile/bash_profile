@@ -6,9 +6,10 @@ alias cp='cp -i'
 alias ..='cd ..' 
 alias l='ls -F' 
 alias ll='ls -alFrt' 
-alias grep='fgrep -i --color' 
+alias grep='sift -i --color' 
+alias zgrep='sift -zip -i --color' 
 alias top='top -c'
-
+alias htop='sudo htop'
 
  
 case "$TERM" in 
@@ -17,8 +18,8 @@ screen)
  ;; 
 esac 
 
-export PATH=$PATH:/home/y/bin:/home/y/sbin 
-export HISTSIZE=2000 
+export PATH=$PATH:~/bin 
+export HISTSIZE=20000
 export HISTIGNORE="&:ls:[bf]g:exit" 
 export HISTTIMEFORMAT="%d/%m/%y %T " 
 export PS1='\[\033[0;31m\][\@]\[\033[0;m\][\[\033[0;36m\]\u@\[\033[0;33m\]\H\[\033[0;m\] \W]\[\033[0;32m\]\$ '
