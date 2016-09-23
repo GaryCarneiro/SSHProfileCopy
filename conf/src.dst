@@ -1,0 +1,5 @@
+$file_list = [
+"#{BASEDIR}/profile/version",
+"#{BASEDIR}/profile/bash_profile",
+"#{BASEDIR}/profile/vimrc"
+]   
