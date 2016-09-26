@@ -6,18 +6,10 @@ require 'net/scp'
 require 'highline/import'
 require 'trollop'
 
-=begin
-def dp(message)
-  if parser.debug
-    puts message
-  end
-end
-=end
-
 
 class Parser
-
   attr_reader :debug
+
   def initialize()
     @hostname = ''
     @username = ''
@@ -75,15 +67,21 @@ class Parser
 end
 
 class Debug
+  attr_reader :message, :debugFlag
 
-  def initialize(debugFlag, message)
+  # def initialize(message, debugFlag=false)
+
+  def initialize()
     @debug = debugFlag
     @msg = message
+    puts @msg
   end
   
+  def print(message, debugFlag)
     if @debug
       puts @msg
     end
+  end
 
 end
 
@@ -125,8 +123,13 @@ end
 
 parser  = Parser.new
 host, user, conf = parser.parse()
+puts "SCP'ing to #{user}@#{host} using config file #{conf}"
+puts "Debugging is on : #{parser.debug}"
 
-Debug.new(parser.debug, "Hello")
+d = Debug.new
+
+d.print("Hello World", parser.debug)
+puts "D Class is #{d.class}"
 
 sshCopier = SSHProfileCopy.new(host, user, conf)
 # p sshCopier
