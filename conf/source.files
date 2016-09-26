@@ -1,0 +1,3 @@
+"#{BASEDIR}/profile/version"
+"#{BASEDIR}/profile/bash_profile"
+"#{BASEDIR}/profile/vimrc"
